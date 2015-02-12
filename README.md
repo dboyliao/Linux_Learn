@@ -56,16 +56,16 @@
   - -i: 僅列出 inode 數量。
 
 - `du [-ahsSkm] 檔案或目錄名`  \# disk usage.
-  -a: all
-  -h: human readable
-  -k: KBytes
-  -m: MBytes
-  -s: Sum.
-  -S: Sum by each sub-directories.
+  - -a: all
+  - -h: human readable
+  - -k: KBytes
+  - -m: MBytes
+  - -s: Sum.
+  - -S: Sum by each sub-directories.
 
 - `ln [-sf] source target`  \# link files.
-  -s: symbolic link.
-  -f: if target file exists, create link after removal.
+  - -s: symbolic link.
+  - -f: if target file exists, create link after removal.
 
 
 
