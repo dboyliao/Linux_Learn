@@ -40,13 +40,13 @@
 
 ## Useful Commandline Tools
 
-- dumpe2fs [-bh] 裝置名        \# 列出 File System Description
+- `dumpe2fs [-bh] 裝置名`  \# 列出 File System Description
   - -b: 列出保留為壞軌的部分。
   - -h: 僅列 superblock 的資訊。
 
-- sync: 把所有暫存在記憶體中的資料寫入硬碟。
+- `sync`: 把所有暫存在記憶體中的資料寫入硬碟。
 
-- df \[-ahikHTm\] \[目錄或檔名\] \# 列出 file system
+- `df \[-ahikHTm\] \[目錄或檔名\]`  \# 列出 file system
   - -a: 列出所有 file system。(包含 /proc 等特殊檔案系統)
   - -k: 以 KBytes 顯示。
   - -m: 以 MBytes 顯示。
@@ -55,7 +55,7 @@
   - -T: 連同 partition 的 filesystem 形態列出。(ext2/3/4...)
   - -i: 僅列出 inode 數量。
 
-- du [-ahsSkm] 檔案或目錄名 \# disk usage.
+- `du [-ahsSkm] 檔案或目錄名`  \# disk usage.
   -a: all
   -h: human readable
   -k: KBytes
@@ -63,7 +63,9 @@
   -s: Sum.
   -S: Sum by each sub-directories.
 
-- ln [-sf] source target
+- `ln [-sf] source target`  \# link files.
+  -s: symbolic link.
+  -f: if target file exists, create link after removal.
 
 
 
