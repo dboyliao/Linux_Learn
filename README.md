@@ -2,7 +2,8 @@
 
 ## Physical Component of Hard Disk
 
-![hard_disk](http://en.wikipedia.org/wiki/File:Hard_drive-en.svg)
+![hard_disk](http://upload.wikimedia.org/wikipedia/commons/5/52/Hard_drive-en.svg)
+![HCS](http://upload.wikimedia.org/wikipedia/commons/0/02/Cylinder_Head_Sector.svg)
 
 - Sector: 最小的物理儲存單位，每一個 sector 為 512 bytes。
 - Cylinder: 磁盤上位於同心圓的 sector 為一個 cylinder，為磁碟分割的最小單位。
