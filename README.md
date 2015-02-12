@@ -1,6 +1,6 @@
 # File System
 
-## Physical Component of Hard Disk
+## Physical Components of Hard Disk
 
 ![hard_disk](http://upload.wikimedia.org/wikipedia/commons/5/52/Hard_drive-en.svg)
 ![HCS](http://upload.wikimedia.org/wikipedia/commons/0/02/Cylinder_Head_Sector.svg)
@@ -38,7 +38,7 @@
   - Block bitmap: 記錄每個 block 對應的號碼與其 block 的使用狀態。
   - Inode bitmap: 記錄每個 inode 的使用狀態。
 
-## Useful Commandline Tools
+### Useful Commandline Tools
 
 - `dumpe2fs [-bh] 裝置名`  \# 列出 File System Description
   - -b: 列出保留為壞軌的部分。
@@ -46,7 +46,7 @@
 
 - `sync`: 把所有暫存在記憶體中的資料寫入硬碟。
 
-- `df \[-ahikHTm\] \[目錄或檔名\]`  \# 列出 file system
+- `df [-ahikHTm] [目錄或檔名]`  \# 列出 file system
   - -a: 列出所有 file system。(包含 /proc 等特殊檔案系統)
   - -k: 以 KBytes 顯示。
   - -m: 以 MBytes 顯示。
@@ -67,5 +67,24 @@
   - -s: symbolic link.
   - -f: if target file exists, create link after removal.
 
+## Partition
 
+Mount: Connect inodes with directories
 
+### Command line tools
+
+- fdisk
+
+- partprobe
+
+- mkfs
+
+- mke2fs
+
+- fsck
+
+- badblocks
+
+- mount
+
+- umount
