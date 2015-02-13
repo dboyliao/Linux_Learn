@@ -170,9 +170,14 @@ Mount: Connect inodes with directories
 ## /etc/fstab 及 /etc/mtab
 
 - /etc/fstab: 包含開機時自動掛載的資料。
+  - dump: 0 --> 不要備份；1 --> 每天備份。
+  - pass: 開機時是否檢驗 file system。 0 --> 不要；1 --> 最優先檢查；2 --> 要檢查。
 
 ![fstab](./img/fstab.png)
 
+- /etc/mtab: mount table。
+  - 為實際 file system 的掛載記錄。
+  - 與 /etc/fstab 不同。 /etc/fstab 為開機時的設定檔。
 
 ## Swap
 
