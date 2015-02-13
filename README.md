@@ -12,7 +12,7 @@
   - -v: 顯示壓縮比等資訊。
   - -#: # 可以是 1~9，1 最快但壓縮比差，9 最慢但壓縮比好。
 
-note: `gzip` 壓縮完會取代原檔案。
+note: `gzip` 壓縮完會取代原檔案。 <br>
 ex: `gzip -c -9 test.txt > test.gz` \# 不取代原檔案的做法
 
 
@@ -27,8 +27,8 @@ ex: `gzip -c -9 test.txt > test.gz` \# 不取代原檔案的做法
   - -v: 同 gzip
   - -#: 同 gzip 
 
-ex: `bzip2 -z -9 -k test.txt` \# 壓縮 test.txt
-ex: `bzip2 -d test.txt.bz2` \# 解壓縮 test.txt.bz2
+ex: `bzip2 -z -9 -k test.txt` \# 壓縮 test.txt <br>
+ex: `bzip2 -d test.txt.bz2` \# 解壓縮 test.txt.bz2 <br>
 
 ## 資料夾/檔案備份
 
@@ -46,11 +46,11 @@ ex: `bzip2 -d test.txt.bz2` \# 解壓縮 test.txt.bz2
   - -O: stdout 輸出。
   - --exclude=PATTERN: 排除所有符合 PATTERN 的檔名。
 
-note: 使用 -j/-z 時，副檔名最好是 tar.bz2/tar.gz 。
-note: -c -x -t 不可同時出現。
-note: 保留絕對路徑解壓縮時會把原本電腦的檔案蓋掉。
-note: `tar -xjv -f xxx.tar.bz2 filename` 將只解壓縮 xxx.tar.bz2 中的 filename 。
-note: `tar -xjv -f xxx.tar.bz2` 將解壓縮所有檔案。
+note: 使用 -j/-z 時，副檔名最好是 tar.bz2/tar.gz 。<br>
+note: -c -x -t 不可同時出現。<br>
+note: 保留絕對路徑解壓縮時會把原本電腦的檔案蓋掉。<br>
+note: `tar -xjv -f xxx.tar.bz2 filename` 將只解壓縮 xxx.tar.bz2 中的 filename 。<br>
+note: `tar -xjv -f xxx.tar.bz2` 將解壓縮所有檔案。<br>
 note: 可以有多個 `--exclude`。例如: `--exclude=PATTERN1 --exclude=PATTERN2`。
 
 
