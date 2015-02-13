@@ -81,7 +81,7 @@ ex: ``fdisk -l``
 ![fdisk_list](./img/fdisk_list.png)
 
 ex: ``fdisk /dev/sda``
-![fdisk_list](./img/fdisk_list.png)
+![fdisk_list](./img/fdisk_dev.png)
 (m will list all available commands)
 
 - partprobe
