@@ -192,6 +192,8 @@ Mount: Connect inodes with directories
 - `swapon 裝置名` \# 啟動 swap
  - `swapon -s`: 列出當前所有 swap partition。
 
+![swap-s](./img/swap.png)
+
 - `swapoff 裝置名` \# 關閉 swap
 
 =======
