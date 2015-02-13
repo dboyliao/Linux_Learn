@@ -117,7 +117,13 @@ note: ``mke2fs`` 的參數皆可用於 mkfs。
 
 Mount: Connect inodes with directories
 
-- `mount`
+- `mount`: (單純執行可顯示掛載資訊)
+  - Basic Usage: `mount 裝置檔名 掛載點`
+   - Linux 會依據 super block 的內容自動選定參數來 mount，但如果想要細部操作，參照下表：
+
+ Parameter |      Description     |
+---------- | ---------------------|
+    -a     | 
 
 - `umount`
 
