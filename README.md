@@ -120,11 +120,20 @@ Mount: Connect inodes with directories
 - `mount`: (單純執行可顯示掛載資訊)
   - Basic Usage: `mount 裝置檔名 掛載點`
    - Linux 會依據 super block 的內容自動選定參數來 mount，但如果想要細部操作，參照下表：
-
- Parameter |      Description     |
----------- | ---------------------|
-    -a     | 
-
+  - Use with tags: 
+   - `mount -a`
+   - `mount [-l]`
+   - `mount [-t "file system type"] [-L "label name"] [-o options] [-n] 裝置名 掛載點`
+-----------------------------------------------------------
+| Parameter  |               Description                   |
+|:----------:|:--------------------------------------------|
+|    -a      | 依照 /etc/fstab 來掛載所有未掛載磁碟            |
+|    -l      | 顯示 label 名稱                              |
+|    -t      | 指定欲掛載類型(etx2/3/4...)                   |
+|    -n      | 避免把掛載資訊寫入 /etc/mtab 中 (單人維護模式用) |
+|    -L      | 以 label name 掛載                           |
+|    -o      | 見 options 表                                |
+-----------------------------------------------------------
 - `umount`
 
 ## /etc/fstab 及 /etc/mtab
