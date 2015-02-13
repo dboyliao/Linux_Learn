@@ -119,12 +119,14 @@ Mount: Connect inodes with directories
 
 - `mount`: (單純執行可顯示掛載資訊)
   - Basic Usage: `mount 裝置檔名 掛載點`
-   - Linux 會依據 super block 的內容自動選定參數來 mount，但如果想要細部操作，參照下表：
+    - Linux 會依據 super block 的內容自動選定參數來 mount，但如果想要細部操作，參照下表：
   - Use with tags: 
-   - `mount -a`
-   - `mount [-l]`
-   - `mount [-t "file system type"] [-L "label name"] [-o options] [-n] 裝置名 掛載點`
------------------------------------------------------------
+    - `mount -a`
+    - `mount [-l]`
+    - `mount [-t "file system type"] [-L "label name"] [-o options] [-n] 裝置名 掛載點`
+
+#### Parameter Table
+
 | Parameter  |               Description                   |
 |:----------:|:--------------------------------------------|
 |    -a      | 依照 /etc/fstab 來掛載所有未掛載磁碟            |
@@ -133,7 +135,21 @@ Mount: Connect inodes with directories
 |    -n      | 避免把掛載資訊寫入 /etc/mtab 中 (單人維護模式用) |
 |    -L      | 以 label name 掛載                           |
 |    -o      | 見 options 表                                |
------------------------------------------------------------
+
+
+#### Options Table
+
+|    Options   |                 Description                |
+|:------------:|:-------------------------------------------|
+|    ro,rw     | 掛載唯唯讀(ro)或讀寫(rw)                     |
+| async, sync  | 使用同步或非同步寫入。預設 async               | 
+|  auto, noauto| 是否寫入 /etc/fstab                         |
+|   dev, nodev | 是否允許建立裝置檔案                          |
+|  suid, nosuid| 是否允許設定 suid                            |
+|  exec, noexec| 是否允許儲存可執行的 binary 檔                 |
+|  user, nouser| 是否讓一般 user 也可以 mount 此 partition     | 
+|    defaults  | == rw, suid, dev, exec, auto, nouser, async|
+
 - `umount`
 
 ## /etc/fstab 及 /etc/mtab
