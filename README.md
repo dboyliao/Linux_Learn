@@ -181,6 +181,19 @@ Mount: Connect inodes with directories
 
 ## Swap
 
+建立 Swap 的基本步驟：
+
+1. 用 fdisk 分割一個 swap partition。
+2. 用 mkswap 來格式化。
+3. swapon 啟動。
+
+- `mkswap 裝置名` \# 格式化為 swap
+
+- `swapon 裝置名` \# 啟動 swap
+ - `swapon -s`: 列出當前所有 swap partition。
+
+- `swapoff 裝置名` \# 關閉 swap
+
 =======
 
 # Reference:
