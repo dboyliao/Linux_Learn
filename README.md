@@ -69,8 +69,6 @@
 
 ## Partition
 
-Mount: Connect inodes with directories
-
 ### Command line tools
 
 - `fdisk [-l] 裝置名` \# 磁碟分割設定。
@@ -81,19 +79,57 @@ ex: ``fdisk -l``
 ![fdisk_list](./img/fdisk_list.png)
 
 ex: ``fdisk /dev/sda``
-![fdisk_list](./img/fdisk_dev.png)
+![fdisk_dev](./img/fdisk_dev.png)
 (m will list all available commands)
 
-- partprobe
+![fdisk_part](./img/fdisk_parttable.png)
+(列出 partition table)
 
-- mkfs
+- `partprobe` \# 強制讓 kernel 更新 partition table。
+(在不重開機的情況下，每次更新 partition 後都必須執行的指令)
 
-- mke2fs
+- `mkfs [-t file system 格式] 裝置檔名` \# 格式化工具
 
-- fsck
+- `mke2fs [-b "block 大小"] [-i "block 大小"] [-L "label 名"] [-c[ -c]] [-j]`
+  - -b: 一個 block 的容量。
+  - -i: 多少容量配一個 inode。
+  - -c: check 硬碟。-c --> 測讀；-c -c --> 測讀 & 寫。
+  - -L: label。
+  - -j: 加入 journal。(ext2 --> ext3)
+ex: ``mke2fs -b 2048 -i 8192 -j -L qmal_disk /dev/sda1``
 
-- badblocks
+- `fsck [-t "file system type"] [-ACay] 裝置名`
+  - -A: 根據 /etc/fstab 掃描所有裝置。
+  - -a: 自動修復有問題的裝置。
+  - -y: 同 -a， 有些 binary 只吃 -y 。
+  - -C: 顯示進度長條圖。
+  - -f (ext2/3 only): 強制檢查。(無論是否 clean)
+  - -D (ext2/3 only): 進行最佳化配置。
+(必須先卸載才能執行 fsck)
 
-- mount
+- `badblocks [-svw] 裝置名稱`
+  - -s: 列出所有須檢查的 block
+  - -v: 顯示當下進度
+  - -w: 執行寫入測試。(建議於空檔案裝置執行此參數)
 
-- umount
+## Mount
+
+Mount: Connect inodes with directories
+
+- `mount`
+
+- `umount`
+
+## /etc/fstab 及 /etc/mtab
+
+
+
+=======
+
+# Reference:
+
+<ul>
+  <li>
+  	<a href="http://linux.vbird.org/">鳥哥的 Linux 私房菜</a>
+  </li>
+</ul>
