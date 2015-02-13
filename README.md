@@ -73,7 +73,16 @@ Mount: Connect inodes with directories
 
 ### Command line tools
 
-- fdisk
+- `fdisk [-l] 裝置名` \# 磁碟分割設定。
+  - -l: 列出整個系統所有 partitions
+(`fdisk` 需要 root 權限)
+
+ex: ``fdisk -l``
+![fdisk_list](./img/fdisk_list.png)
+
+ex: ``fdisk /dev/sda``
+![fdisk_list](./img/fdisk_list.png)
+(m will list all available commands)
 
 - partprobe
 
