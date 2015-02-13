@@ -90,15 +90,16 @@ ex: ``fdisk /dev/sda``
 
 - `mkfs [-t file system 格式] 裝置檔名` \# 格式化工具
 
-- `mke2fs [-b "block 大小"] [-i "block 大小"] [-L "label 名"] [-c[ -c]] [-j]`
+- `mke2fs [-b "block 大小"] [-i "block 大小"] [-L "label 名"] [-c[ -c]] [-j]` \# 格式化工具 with 細部參數，亦可用於測試磁碟。
   - -b: 一個 block 的容量。
   - -i: 多少容量配一個 inode。
   - -c: check 硬碟。-c --> 測讀；-c -c --> 測讀 & 寫。
   - -L: label。
   - -j: 加入 journal。(ext2 --> ext3)
 ex: ``mke2fs -b 2048 -i 8192 -j -L qmal_disk /dev/sda1``
+note: ``mke2fs`` 的參數皆可用於 mkfs。
 
-- `fsck [-t "file system type"] [-ACay] 裝置名`
+- `fsck [-t "file system type"] [-ACay] 裝置名` \# 磁碟檢驗修復工具
   - -A: 根據 /etc/fstab 掃描所有裝置。
   - -a: 自動修復有問題的裝置。
   - -y: 同 -a， 有些 binary 只吃 -y 。
@@ -107,7 +108,7 @@ ex: ``mke2fs -b 2048 -i 8192 -j -L qmal_disk /dev/sda1``
   - -D (ext2/3 only): 進行最佳化配置。
 (必須先卸載才能執行 fsck)
 
-- `badblocks [-svw] 裝置名稱`
+- `badblocks [-svw] 裝置名稱` \# 偵測壞軌
   - -s: 列出所有須檢查的 block
   - -v: 顯示當下進度
   - -w: 執行寫入測試。(建議於空檔案裝置執行此參數)
