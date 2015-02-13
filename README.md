@@ -124,6 +124,8 @@ Mount: Connect inodes with directories
     - `mount -a`
     - `mount [-l]`
     - `mount [-t "file system type"] [-L "label name"] [-o options] [-n] 裝置名 掛載點`
+    - `mount --bind source_dir target_dir`
+    - `mount -o remount,rw,auto,.. 裝置或目錄名`
 
 #### Parameter Table
 
@@ -131,9 +133,10 @@ Mount: Connect inodes with directories
 |:----------:|:--------------------------------------------|
 |    -a      | 依照 /etc/fstab 來掛載所有未掛載磁碟            |
 |    -l      | 顯示 label 名稱                              |
-|    -t      | 指定欲掛載類型(etx2/3/4...)                   |
+|    -t      | 指定欲掛載類型(etx2/3/4, iso9660...etc)       |
 |    -n      | 避免把掛載資訊寫入 /etc/mtab 中 (單人維護模式用) |
 |    -L      | 以 label name 掛載                           |
+|   --bind   | 把 source_dir mount 到 target_dir。(似 ln -s)|
 |    -o      | 見 options 表                                |
 
 
@@ -149,12 +152,29 @@ Mount: Connect inodes with directories
 |  exec, noexec| 是否允許儲存可執行的 binary 檔                 |
 |  user, nouser| 是否讓一般 user 也可以 mount 此 partition     | 
 |    defaults  | == rw, suid, dev, exec, auto, nouser, async|
+|    remount   | 重新掛載
 
-- `umount`
+- `umount [-fn] 裝置名或掛載點`  \# 卸載 file system
+  - -f: 強制卸載
+  - -n: 不更新 /etc/mtab 下卸載
+
+- `mknod 裝置檔名 [bcp] [Major] [Minor]` \# 建立裝置檔
+  - b: 設為週邊儲存裝置。如硬碟等。
+  - c: 設為週邊輸入裝置。如滑鼠。
+  - p: 設為 pipe (FIFO)。
+
+![mknod1](./img/mknod_major_minor.png)
+
+[官方硬體裝置代碼表 (major, minor)](http://www.lanana.org/docs/device-list/devices-2.6+.txt)
 
 ## /etc/fstab 及 /etc/mtab
 
+- /etc/fstab: 包含開機時自動掛載的資料。
 
+![fstab](./img/fstab.png)
+
+
+## Swap
 
 =======
 
