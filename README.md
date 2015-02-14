@@ -11,7 +11,11 @@ vi / vim 有三種模式
 ![vbird_vim](http://linux.vbird.org/linux_basic/0310vi//vi-mode.gif) <br>
 (圖片來源: <a href="http://linux.vbird.org/linux_basic/0310vi.php">鳥哥的 Linux 私房菜</a>)
 
+**可以到 https://github.com/amix/vimrc 找到超炫的 vim 版本喔!**
+
 ## 一般模式常用指令
+
+`<command>` --> 為超常用指令，優先背!
 
 ### 游標移動
 
@@ -62,10 +66,28 @@ vi / vim 有三種模式
 - y$: 複製游標所在的那個字元到該行行尾的所有資料
 - `p,P`: p 為將已複製的資料在游標下一行貼上，P 則為貼在游標上一行
 - J: 將游標所在列與下一列的資料結合成同一列
+- c: 刪除多行；例如 10cj = 向下刪除 10 行，10ck = 向上刪除 10 行
 - .: 重複前一個動作的意思
 
 ### 模式切換
 
-- `i,I`: 插入模式(Insert mode)，i 為『從目前游標所在處插入』，I 為『在目前所在行的第一個非空白字元處開始插入』
-- a,A: 插入模式(Insert mode)，a 為『從目前游標所在的下一個字元處開始插入』，A 為『從游標所在行的最後一個字元處開始插入』
+- `i,I`: 插入模式 (Insert mode)，i 為『從目前游標所在處插入』，I 為『在目前所在行的第一個非空白字元處開始插入』
+- a,A: 插入模式 (Insert mode)，a 為『從目前游標所在的下一個字元處開始插入』，A 為『從游標所在行的最後一個字元處開始插入』
 - o,O: 插入模式(Insert mode)，o 為『在目前游標所在的下一行處插入新的一行』； O 為在目前游標所在處的上一行插入新的一行
+- r,R: 取代模式 (Replace mode)，r 只會取代游標所在的那一個字元一次；R會一直取代游標所在的文字，直到按下 ESC 為止
+
+### 指令列指令
+
+- `:w`
+- `:q`
+- `:<command>!`:
+- ZZ
+- :w <filename>:
+- `:r <filename>`:
+- :n1,n2 w [filename]:
+- `:! command`: 似 ipython 中的 ! command，可查看此時在 shell 執行指令的結果會如何。ex :! ls
+
+### 暫時性改變 vim 環境
+
+- `:set [setting]`: 例如 :set nu 為顯示行數； :set nonu 為不顯示行數
+
