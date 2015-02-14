@@ -64,8 +64,10 @@ note: 可以有多個 `--exclude`。例如: `--exclude=PATTERN1 --exclude=PATTER
   - -level: dump 等級，由 0 ~ 9 (見下圖)
   - -W: 查看所有在 /etc/fstab 中的檔案系統是否有被 dump 過 
 
-![vbird_dump](http://linux.vbird.org/linux_basic/0240tarcompress//dump-1.gif)
+![vbird_dump](http://linux.vbird.org/linux_basic/0240tarcompress//dump-1.gif) <br>
 (圖片截自 <a href="http://linux.vbird.org/linux_basic/0240tarcompress.php#dump_restore">鳥哥的 Linux 私房菜</a>)
+
+note: 不同等級的 dump file 以附檔名作區格。例如: xxx.dump xxx.dump.1 xxx.dump.2 ...etc
 
 - `restore` \# 與 dump 對應，用以回復資料或整個檔案系統
   - mode options: (不可混用)
@@ -79,4 +81,10 @@ note: 可以有多個 `--exclude`。例如: `--exclude=PATTERN1 --exclude=PATTER
     - -D mount_point: 可與 -C 混用，可比較 dump 內容與目標掛載點的差別。 
 
 ## 其他常用工具
+
+- `dd if='input_file' of='output_file' bs='block_size' count='block_numbers'` \# 直接讀取 sector 並寫入備份
+  - if: 欲輸出的檔案/裝置檔
+  - of: 欲寫入的檔案/裝置檔
+  - bs: 一個 block 的 size (in bytes)，預設 512 bytes (一個 sector)
+  - count: 寫入多少 block
 
