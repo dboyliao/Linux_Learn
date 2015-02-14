@@ -1,4 +1,3 @@
-# Vi and Vim
 
 vi / vim 有三種模式
 
@@ -20,7 +19,6 @@ vi / vim 有三種模式
 ### 游標移動
 
 - `[Ctrl]+[f]`: 螢幕『向下』移動一頁，相當於 [Page Down]按鍵 (f for forward)
-- `[Ctrl]+[b]`: 螢幕『向上』移動一頁，相當於 [Page Up] 按鍵 (b for backward)
 - `[Ctrl]+[d]`: 螢幕『向下』移動半頁 (d for down)
 - `[Ctrl]+[u]`: 螢幕『向上』移動半頁 (u for up)
 - +: 移動到下一列
@@ -35,7 +33,6 @@ vi / vim 有三種模式
 - `nG`: 移動到這個檔案的第 n 行
 - `gg`: 移動到這個檔案的第一行
 - `n<Enter>`: 游標向下移動 n 行
-
 ### 搜尋 / 取代字元
 
 - `/word`: 向游標之下尋找一個名稱為 word 的字串
@@ -90,4 +87,31 @@ vi / vim 有三種模式
 ### 暫時性改變 vim 環境
 
 - `:set [setting]`: 例如 :set nu 為顯示行數； :set nonu 為不顯示行數
+
+### vim 環境設定
+
+**set:**
+
+- nu / nonu: 開啟/取消顯示行號
+- hlsearch / nohlsearch: 開啟/取消搜索反白
+- autoindent / noautoindent: 開啟 / 取消自動縮排
+- backup: 自動備份
+- ruler: 顯示 ruler
+- bg=dark/light: 設定背景色調
+- backspace=[012]: 0 or 1 --> 不許 backspace 刪除字元；2 --> 允許 backspace 刪除字元
+
+**不用 set:**
+
+- syntax on / syntax off: 開啟/取消語法檢查
+
+
+## 編碼轉換
+
+- `iconv` \# 轉換編碼
+  - --list: 列出所有 iconv 支援的編碼
+  - -f: from
+  - -t: to
+  - -o: output file
+
+ex: iconv -f big5 -t utf8 test.txt -o test.utf8
 

@@ -1,6 +1,0 @@
-Hello 我是 Dboy
-
-練習 vim 中~
-真好玩~~~~
-
-可以到 https://github.com/amix/vimrc 找到超炫的 vim 版本喔!
