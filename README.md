@@ -53,5 +53,30 @@ note: `tar -xjv -f xxx.tar.bz2 filename` 將只解壓縮 xxx.tar.bz2 中的 file
 note: `tar -xjv -f xxx.tar.bz2` 將解壓縮所有檔案。<br>
 note: 可以有多個 `--exclude`。例如: `--exclude=PATTERN1 --exclude=PATTERN2`。
 
+## 完整檔案系統備份
 
+- `dump [-Suvj] [-level] [-f 備份檔名] 欲備份的資料` \# 可用於備份單一資料夾或完整檔案系統
+  - -S: 列出 dump 所需空間
+  - -u: 將 dump 的時間記錄至 /etc/dumpdates 中 (只支援備份檔案系統時)
+  - -v: 同 bzip2 等備份指令之 -v
+  - -j: 以 bzip2 支援備份
+  - -f: 同 bzip2 等備份指令之 -f
+  - -level: dump 等級，由 0 ~ 9 (見下圖)
+  - -W: 查看所有在 /etc/fstab 中的檔案系統是否有被 dump 過 
+
+![vbird_dump](http://linux.vbird.org/linux_basic/0240tarcompress//dump-1.gif)
+(圖片截自 <a href="http://linux.vbird.org/linux_basic/0240tarcompress.php#dump_restore">鳥哥的 Linux 私房菜</a>)
+
+- `restore` \# 與 dump 對應，用以回復資料或整個檔案系統
+  - mode options: (不可混用)
+    - -t: 查看 dump 下來的檔案內容。似 tar -t
+    - -C: 把 dump 中的檔案與實際檔案系統做比較。似 git diff
+    - -i: 互動模式
+    - -r: 還原整個檔案系統
+  - general options: (配合各種 mode 使用)
+    - -h: 查看 dump 的 inode 與 label 等資訊
+    - -f filename.dump: 欲處理的 dump file 。 
+    - -D mount_point: 可與 -C 混用，可比較 dump 內容與目標掛載點的差別。 
+
+## 其他常用工具
 
