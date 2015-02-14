@@ -8,7 +8,8 @@ vi / vim 有三種模式
   - R: Replace mode
 - 指令列命令模式: 提供讀取、存檔、大量取代字元、離開 vi 、顯示行號等等的動作
 
-![vbird_vim](http://linux.vbird.org/linux_basic/0310vi//vi-mode.gif)
+![vbird_vim](http://linux.vbird.org/linux_basic/0310vi//vi-mode.gif) <br>
+(圖片來源: <a href="http://linux.vbird.org/linux_basic/0310vi.php">鳥哥的 Linux 私房菜</a>)
 
 ## 一般模式常用指令
 
@@ -40,4 +41,17 @@ vi / vim 有三種模式
 - `:n1,n2s/word1/word2/g`:
 - `:n1,$s/word1/word2/g`:
 - `:n1,n2s/word1/word2/gc`:
+
+### 刪除 / 複製 / 貼上
+
+- x,X
+- nx
+- dd
+- ndd
+- d1G
+- dG
+- d$
+- d0
+- yy
+
 
