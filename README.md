@@ -1,8 +1,3 @@
-# Linux Notes by DboyLiao
+# Related Links for Learning Linux
 
-Checkout different branch for specific topics
-
-- master: Welcome page.
-- file_system: Intro for file system in Linux.
-- compress_file: Notes for backup files in Linux.
-- vim_intro: Intro to vim and its basic commands.
+- http://www.tecmint.com/command-line-tools-to-monitor-linux-performance/
